@@ -1,13 +1,24 @@
+import Ingredient from "./Ingredient";
+
 const BurgerStack = (props) => {
+
+    // console.log("Props.Stack:", props.stack)
+
+
     return (
-        <>
-            <h3> BurgerStack </h3>
-
+        <div>
+            <h1> Stack </h1>
             <ul>
-                {/* // map through props.ingredients */}
-            </ul>
+                {props.stack.length > 0 ? props.stack.map((ingredient, index) => (
+                    
+                    <Ingredient key={index} index={index} ingredient={ingredient} removeFromBurger={props.removeFromBurger} />
 
-        </>
+                ))
+                    :
+                    <p> No ingredients </p>
+                }
+            </ul>
+        </div>
     );
 };
 
